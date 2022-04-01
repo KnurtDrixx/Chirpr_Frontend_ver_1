@@ -1,5 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import moment from 'moment';
 
 function Input(props) {
     const [text, setText] = useState('')
@@ -10,8 +12,8 @@ function Input(props) {
         if (text.length > 44){
             return
         }
-
-        props.addNewPost(text);
+        let newPost = { chrpText: text, uuid: uuidv4(), timestamp: moment().format("[Ervin Howell Chrpd on] dddd, MMMM Do YYYY, h:mm:ss a")}
+        props.addNewPost(newPost);
         setText('')
     }
     return <>

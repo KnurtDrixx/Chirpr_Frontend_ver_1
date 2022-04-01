@@ -1,8 +1,11 @@
 import React from "react";
+import {GiKiwiBird} from 'react-icons/gi'
+
+
 
 function Post(props){
-    return <div>{props.post.map((str, i) => (
-        <div key= {`post${i}`} >{str}</div>
+    return <div>{props.post.map( (chrp, i) => (
+        <div key= {`post${i}`}><div><GiKiwiBird/></div> {chrp.chrpText}</div>
 
     ))}</div>
 }
